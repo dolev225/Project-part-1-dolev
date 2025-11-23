@@ -1,7 +1,7 @@
 from pydantic import BaseModel, ValidationError, field_validator
 import logging 
 import subprocess
-from ent import machine
+from machine import Machine
 import json
 
 user_input=[]
@@ -33,7 +33,7 @@ class function  :
 
             #validat info is good
             try:
-                _machine= machine(name=vm_name_input, os=vm_os_input,ram=vm_ram_input,cpu=vm_cpu_input)
+                _machine= Machine(name=vm_name_input, os=vm_os_input,ram=vm_ram_input,cpu=vm_cpu_input)
                 print(" User input is  valid :")
                 instance_data = {"name": vm_name_input, "os": vm_os_input, "cpu": vm_cpu_input, "ram": vm_ram_input}
                 user_input.append(instance_data) 

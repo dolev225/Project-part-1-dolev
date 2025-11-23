@@ -18,8 +18,8 @@ logging.info("infra_simulator started")
 print("infra_simulator started")
 
 #installing inviermant
-function.run_installer_nginx()
-function.run_installer_pydantic()
+#function.run_installer_nginx()
+#function.run_installer_pydantic()
 
 #getting vm info form user and test it 
 server=function.user_input()
