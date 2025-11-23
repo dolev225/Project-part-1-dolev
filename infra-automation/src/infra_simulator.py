@@ -1,12 +1,8 @@
-from machine import vm
+from function import function 
 import json
 import logging 
 
-def save_file(server):
-    with open("configs/instances.json","w") as file:
-        json.dump(server, file, indent=4)
-    print("saving data as json file at configs/instances.json")
-    logging.info("machine info has beed save at instances.json")
+
 
 #define logging info
 logging.basicConfig(
@@ -22,13 +18,13 @@ logging.info("infra_simulator started")
 print("infra_simulator started")
 
 #installing inviermant
-vm.run_installer_nginx()
-vm.run_installer_pydantic()
+function.run_installer_nginx()
+function.run_installer_pydantic()
 
 #getting vm info form user and test it 
-server=vm.user_input()
+server=function.user_input()
 if  server !='null' :
-    save_file(server)
+    function.save_file(server)
 else :
     print("machine info is nothing will not save the info")
     logging.error("do to user stop the info in instances.json will not be saved")
